@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Leetspeak Generator</title>
+  <meta name="description" content="">
+  <meta name="author" content="Beigel">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="./css/output.css">
+  <link rel="stylesheet" href="./css/cookieconsent.css">
+
+
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="js/constMagic.js"></script>
+  <script src="js/magic.js"></script>
+</head>
+
+
+<body class="font-raleway">
+  <header class="grid gap-4 text-sm leading-5 p-4">
+    <div>
+      <label class="swap swap-rotate float-right">
+        <input type="checkbox" id="darkMode" class="theme-controller" value="darkTheme" />
+        <svg class="swap-off fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+        </svg>
+        <svg class="swap-on fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+        </svg>
+      </label>
+    </div>
+  </header>
+
+  <main class="text-center">
+
+    <!-- Title -->
+    <div id="titel" class="py-2 lg:py-14">
+      <h1 class="text-5xl lg:text-7xl">Leetspeak<br>Generator</h1>
+      <p class="text-1xl lg:text-2xl font-medium">Generate your own leet</p>
+    </div>
+
+    <!-- Nav -->
+    <ul class="menu menu-horizontal  rounded-box max-w-xl space-x-3">
+      <li><a id="simpleLeetNav" class="active" onclick="setNavActive(0)">simple</a></li>
+      <li><a id="extendedLeetNav" onclick="setNavActive(1)">extended</a></li>
+      <!-- <li><a id="customLeetNav" onclick="setNavActive(2)">custom</a></li> -->
+    </ul>
+    <div class="space-y-2 my-4 mx-4">
+      <div>
+        <input id="inputText" type="text" class="input input-bordered w-full max-w-xl"
+          oninput="changePlainTextToLeetText()" />
+      </div>
+      <div>
+        <input id="outputText" type="text" class="input input-bordered w-full max-w-xl" readonly />
+      </div>
+    </div>
+    <div class="space-y-3 mt-6">
+      <div>
+        <button id="switchTranslationButton" class="btn btn-ghost tooltip tooltip-bottom"
+          data-tip="Switch between leet and plan text" onclick="switchTranslation()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M15 21L15 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path d="M9 15L9 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              </path>
+              <path d="M12 18L14.913 20.913V20.913C14.961 20.961 15.039 20.961 15.087 20.913V20.913L18 18"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M6 6L8.91296 3.08704V3.08704C8.96103 3.03897 9.03897 3.03897 9.08704 3.08704V3.08704L12 6"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              </path>
+            </g>
+          </svg>
+        </button>
+        <button class="btn btn-ghost tooltip tooltip-bottom" data-tip="table from the selected Leet"
+          onclick="my_modal_1.showModal()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M3 9L21 9M12 9V20M6.2 20H17.8C18.9201 20 19.4802 20 19.908 19.782C20.2843 19.5903 20.5903 19.2843 20.782 18.908C21 18.4802 21 17.9201 21 16.8V7.2C21 6.0799 21 5.51984 20.782 5.09202C20.5903 4.71569 20.2843 4.40973 19.908 4.21799C19.4802 4 18.9201 4 17.8 4H6.2C5.0799 4 4.51984 4 4.09202 4.21799C3.71569 4.40973 3.40973 4.71569 3.21799 5.09202C3 5.51984 3 6.07989 3 7.2V16.8C3 17.9201 3 18.4802 3.21799 18.908C3.40973 19.2843 3.71569 19.5903 4.09202 19.782C4.51984 20 5.07989 20 6.2 20Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              </path>
+            </g>
+          </svg>
+        </button>
+        <button id="copyToClipBoard" class="btn btn-ghost tooltip tooltip-bottom" data-tip="copy to clipboard"
+          onclick="copyToClipBoard()">
+          <label id="label" class="swap ">
+            <div class="swap-on">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <circle cx="12" cy="12" r="10" stroke="oklch(var(--su))" stroke-width="1.5"></circle>
+                  <path d="M8.5 12.5L10.5 14.5L15.5 9.5" stroke="oklch(var(--su))" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+            </div>
+            <div class="swap-off">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g id="Edit / Copy">
+                    <path id="Vector"
+                      d="M9 9V6.2002C9 5.08009 9 4.51962 9.21799 4.0918C9.40973 3.71547 9.71547 3.40973 10.0918 3.21799C10.5196 3 11.0801 3 12.2002 3H17.8002C18.9203 3 19.4801 3 19.9079 3.21799C20.2842 3.40973 20.5905 3.71547 20.7822 4.0918C21.0002 4.51962 21.0002 5.07967 21.0002 6.19978V11.7998C21.0002 12.9199 21.0002 13.48 20.7822 13.9078C20.5905 14.2841 20.2839 14.5905 19.9076 14.7822C19.4802 15 18.921 15 17.8031 15H15M9 9H6.2002C5.08009 9 4.51962 9 4.0918 9.21799C3.71547 9.40973 3.40973 9.71547 3.21799 10.0918C3 10.5196 3 11.0801 3 12.2002V17.8002C3 18.9203 3 19.4801 3.21799 19.9079C3.40973 20.2842 3.71547 20.5905 4.0918 20.7822C4.5192 21 5.07899 21 6.19691 21H11.8036C12.9215 21 13.4805 21 13.9079 20.7822C14.2842 20.5905 14.5905 20.2839 14.7822 19.9076C15 19.4802 15 18.921 15 17.8031V15M9 9H11.8002C12.9203 9 13.4801 9 13.9079 9.21799C14.2842 9.40973 14.5905 9.71547 14.7822 10.0918C15 10.5192 15 11.079 15 12.1969L15 15"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </label>
+        </button>
+      </div>
+    </div>
+    </div>
+    </div>
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+        <div class="overflow-x-auto">
+          <h3 id="tableTitle"></h3>
+          <div class="divider"></div>
+          <table id="customLeetTable" class="table table-zebra">
+            <thead>
+              <tr>
+                <th>Plain</th>
+                <th class="rightBorder">Leet</th>
+                <th>Plain</th>
+                <th>Leet</th>
+              </tr>
+            </thead>
+            <tbody id=leetTableBody>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-action">
+          <button id="edit_button" class="btn hidden" onclick="editTable()">Edit</button>
+          <button id="save_button" class="btn hidden" onclick="saveTable()">Save</button>
+          <form method="dialog">
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+  </main>
+  <footer
+    class="grid auto-rows-auto grid-cols-1 lg:grid-cols-3  lg:gap-4 text-sm leading-5 px-4  bg-base-100 absolute inset-x-0 bottom-0">
+    <aside class="justify-self-center lg:justify-self-start lg:self-center order-3  lg:order-1">
+      <p>Copyright © 2024 - All rights reserved</p>
+    </aside>
+    <nav class="place-self-center order-1 lg:order-2">
+      <div>
+        <a class="link link-hover" href="./legalNotice.html">Impressum</a>
+        |
+        <a class="link link-hover" href="./privatePolicy.html">Datenschutzerklärung</a>
+        |
+        <a class="link link-hover" data-cc="show-preferencesModal">Cookie policy</a>
+      </div>
+    </nav>
+    <nav class="justify-self-center lg:justify-self-end order-2 lg:order-3">
+      <div class="grid grid-flow-col gap-4">
+        <a class="place-self-center">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M18.59 5.88997C17.36 5.31997 16.05 4.89997 14.67 4.65997C14.5 4.95997 14.3 5.36997 14.17 5.69997C12.71 5.47997 11.26 5.47997 9.83001 5.69997C9.69001 5.36997 9.49001 4.95997 9.32001 4.65997C7.94001 4.89997 6.63001 5.31997 5.40001 5.88997C2.92001 9.62997 2.25001 13.28 2.58001 16.87C4.23001 18.1 5.82001 18.84 7.39001 19.33C7.78001 18.8 8.12001 18.23 8.42001 17.64C7.85001 17.43 7.31001 17.16 6.80001 16.85C6.94001 16.75 7.07001 16.64 7.20001 16.54C10.33 18 13.72 18 16.81 16.54C16.94 16.65 17.07 16.75 17.21 16.85C16.7 17.16 16.15 17.42 15.59 17.64C15.89 18.23 16.23 18.8 16.62 19.33C18.19 18.84 19.79 18.1 21.43 16.87C21.82 12.7 20.76 9.08997 18.61 5.88997H18.59ZM8.84001 14.67C7.90001 14.67 7.13001 13.8 7.13001 12.73C7.13001 11.66 7.88001 10.79 8.84001 10.79C9.80001 10.79 10.56 11.66 10.55 12.73C10.55 13.79 9.80001 14.67 8.84001 14.67ZM15.15 14.67C14.21 14.67 13.44 13.8 13.44 12.73C13.44 11.66 14.19 10.79 15.15 10.79C16.11 10.79 16.87 11.66 16.86 12.73C16.86 13.79 16.11 14.67 15.15 14.67Z"
+                fill="currentColor"></path>
+            </g>
+          </svg></a>
+        <a class="place-self-center">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>github [#142]</title>
+              <desc>Created with Sketch.</desc>
+              <defs> </defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="currentColor">
+                  <g id="icons" transform="translate(56.000000, 160.000000)">
+                    <path
+                      d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
+                      id="github-[#142]"> </path>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg> </a>
+        <a target="_blank"
+          href='https://play.google.com/store/apps/details?id=com.beigel.leetSpeak_Generator&hl=de&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+          <img class="max-h-14" alt='Get it on Google Play'
+            src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' />
+        </a>
+      </div>
+    </nav>
+  </footer>
+  <script type="module" src="./js/cookieconsent-config.js"></script>
+</body>
+
+</html>
