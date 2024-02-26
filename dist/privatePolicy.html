@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html id="html_Tag">
 
 <head>
     <!-- Basic Page Needs
@@ -13,422 +13,267 @@
     <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="./css/output.css">
-    <link rel="stylesheet" href="./css/cookieconsent.css">
 
     <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src="./js/storageMagic.js"></script>
-  <script src="./js/policyMagic.js"></script>
-    <script defer src="./js/cookieconsent.js"></script>
-    <script defer src="./js/cookieconsent-init.js"></script>
+    <script>
+        const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
+        if (darkModeEnabled) {
+            document.getElementById("html_Tag").setAttribute("data-theme", "darkTheme")
+        }
+    </script>
 </head>
 
 
 <body class="font-raleway">
-<div class="flex flex-auto flex-col">
-    <header class="text-sm leading-5 p-4">
-        <div>
-          <label class="swap swap-rotate float-right">
-            <input type="checkbox" id="darkMode" class="theme-controller" value="darkTheme" />
-            <svg class="swap-off fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path
-                d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-            </svg>
-            <svg class="swap-on fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path
-                d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-            </svg>
-          </label>
-        </div>
-      </header>
-
-      <main class="text-center mx-10">
+    <main class="mx-10">
         <!-- Title -->
-        <div id="titel" class="py-2 lg:py-14">
-            <h1 class="text-5xl lg:text-7xl">Leetspeak<br>Generator</h1>
-            <p class="text-1xl lg:text-2xl font-medium">Datenschutzerklärung</p>
+        <div id="titel" class="pt-14 text-center ">
+            <h1 class="text-5xl lg:text-7xl mb-5">Leetspeak<br>Generator</h1>
+            <button class="btn btn-ghost tooltip tooltip-bottom " data-tip="back"
+                onclick="window.location.href='./index.html'">
+                <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                        <path
+                            d="M9.00002 15.3802H13.92C15.62 15.3802 17 14.0002 17 12.3002C17 10.6002 15.62 9.22021 13.92 9.22021H7.15002"
+                            stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path d="M8.57 10.7701L7 9.19012L8.57 7.62012" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+            </button>
         </div>
-        
-        <button class="btn btn-ghost tooltip tooltip-bottom "  data-tip="back" onclick="window.location.href='./index.html'">
-            <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-              <g id="SVGRepo_iconCarrier"> 
-                <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                  <path d="M9.00002 15.3802H13.92C15.62 15.3802 17 14.0002 17 12.3002C17 10.6002 15.62 9.22021 13.92 9.22021H7.15002" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> 
-                  <path d="M8.57 10.7701L7 9.19012L8.57 7.62012" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-              </g></svg>
-          </button>
-        <div >
-                <h1 class="text-2xl font-bold">Datenschutzerklärung</h1>
-                <h2 class="text-1xl font-bold" id="m716">Präambel</h2>
-                <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer
-                    personenbezogenen Daten (nachfolgend auch kurz als "Daten" bezeichnet) wir zu welchen Zwecken und in
-                    welchem Umfang verarbeiten. Die Datenschutzerklärung gilt für alle von uns durchgeführten
-                    Verarbeitungen personenbezogener Daten, sowohl im Rahmen der Erbringung unserer Leistungen als auch
-                    insbesondere auf unseren Webseiten, in mobilen Applikationen sowie innerhalb externer
-                    Onlinepräsenzen, wie z. B. unserer Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als
-                    "Onlineangebot").</p>
-                <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
+        <div class="text-justify lg:mx-56">
+            <h4 class="text-1xl lg:text-2xl font-bold">Datenschutzerklärung</h4>
+            <p>Wir freuen uns sehr über Ihr Interesse an unserem Unternehmen. Datenschutz hat einen besonders hohen Stellenwert für die Geschäftsleitung der Leetspeak Generator. Eine Nutzung der Internetseiten der Leetspeak Generator ist grundsätzlich ohne jede Angabe personenbezogener Daten möglich. Sofern eine betroffene Person besondere Services unseres Unternehmens über unsere Internetseite in Anspruch nehmen möchte, könnte jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht für eine solche Verarbeitung keine gesetzliche Grundlage, holen wir generell eine Einwilligung der betroffenen Person ein.</p>
+            
+            <p>Die Verarbeitung personenbezogener Daten, beispielsweise des Namens, der Anschrift, E-Mail-Adresse oder Telefonnummer einer betroffenen Person, erfolgt stets im Einklang mit der Datenschutz-Grundverordnung und in Übereinstimmung mit den für die Leetspeak Generator geltenden landesspezifischen Datenschutzbestimmungen. Mittels dieser Datenschutzerklärung möchte unser Unternehmen die Öffentlichkeit über Art, Umfang und Zweck der von uns erhobenen, genutzten und verarbeiteten personenbezogenen Daten informieren. Ferner werden betroffene Personen mittels dieser Datenschutzerklärung über die ihnen zustehenden Rechte aufgeklärt.</p>
+            
+            <p>Die Leetspeak Generator hat als für die Verarbeitung Verantwortlicher zahlreiche technische und organisatorische Maßnahmen umgesetzt, um einen möglichst lückenlosen Schutz der über diese Internetseite verarbeiteten personenbezogenen Daten sicherzustellen. Dennoch können Internetbasierte Datenübertragungen grundsätzlich Sicherheitslücken aufweisen, sodass ein absoluter Schutz nicht gewährleistet werden kann. Aus diesem Grund steht es jeder betroffenen Person frei, personenbezogene Daten auch auf alternativen Wegen, beispielsweise telefonisch, an uns zu übermitteln.</p>
+            <br>
+            <h4 class="text-1xl  font-bold">1. Begriffsbestimmungen</h4>
+            <p>Die Datenschutzerklärung der Leetspeak Generator beruht auf den Begrifflichkeiten, die durch den Europäischen Richtlinien- und Verordnungsgeber beim Erlass der Datenschutz-Grundverordnung (DS-GVO) verwendet wurden. Unsere Datenschutzerklärung soll sowohl für die Öffentlichkeit als auch für unsere Kunden und Geschäftspartner einfach lesbar und verständlich sein. Um dies zu gewährleisten, möchten wir vorab die verwendeten Begrifflichkeiten erläutern.</p>
+            
+            <p>Wir verwenden in dieser Datenschutzerklärung unter anderem die folgenden Begriffe:</p>
+            
+            <ul style="list-style: none">
+            <li><h4>a)    personenbezogene Daten</h4>
+            <p>Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person (im Folgenden „betroffene Person“) beziehen. Als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, zu einer Kennnummer, zu Standortdaten, zu einer Online-Kennung oder zu einem oder mehreren besonderen Merkmalen, die Ausdruck der physischen, physiologischen, genetischen, psychischen, wirtschaftlichen, kulturellen oder sozialen Identität dieser natürlichen Person sind, identifiziert werden kann.</p>
+            </li>
+            <li><h4>b)    betroffene Person</h4>
+            <p>Betroffene Person ist jede identifizierte oder identifizierbare natürliche Person, deren personenbezogene Daten von dem für die Verarbeitung Verantwortlichen verarbeitet werden.</p>
+            </li>
+            <li><h4>c)    Verarbeitung</h4>
+            <p>Verarbeitung ist jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten wie das Erheben, das Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch Übermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung.</p>
+            </li>
+            <li><h4>d)    Einschränkung der Verarbeitung</h4>
+            <p>Einschränkung der Verarbeitung ist die Markierung gespeicherter personenbezogener Daten mit dem Ziel, ihre künftige Verarbeitung einzuschränken.</p>
+            </li>
+            <li><h4>e)    Profiling</h4>
+            <p>Profiling ist jede Art der automatisierten Verarbeitung personenbezogener Daten, die darin besteht, dass diese personenbezogenen Daten verwendet werden, um bestimmte persönliche Aspekte, die sich auf eine natürliche Person beziehen, zu bewerten, insbesondere, um Aspekte bezüglich Arbeitsleistung, wirtschaftlicher Lage, Gesundheit, persönlicher Vorlieben, Interessen, Zuverlässigkeit, Verhalten, Aufenthaltsort oder Ortswechsel dieser natürlichen Person zu analysieren oder vorherzusagen.</p>
+            </li>
+            <li><h4>f)     Pseudonymisierung</h4>
+            <p>Pseudonymisierung ist die Verarbeitung personenbezogener Daten in einer Weise, auf welche die personenbezogenen Daten ohne Hinzuziehung zusätzlicher Informationen nicht mehr einer spezifischen betroffenen Person zugeordnet werden können, sofern diese zusätzlichen Informationen gesondert aufbewahrt werden und technischen und organisatorischen Maßnahmen unterliegen, die gewährleisten, dass die personenbezogenen Daten nicht einer identifizierten oder identifizierbaren natürlichen Person zugewiesen werden.</p>
+            </li>
+            <li><h4>g)    Verantwortlicher oder für die Verarbeitung Verantwortlicher</h4>
+            <p>Verantwortlicher oder für die Verarbeitung Verantwortlicher ist die natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet. Sind die Zwecke und Mittel dieser Verarbeitung durch das Unionsrecht oder das Recht der Mitgliedstaaten vorgegeben, so kann der Verantwortliche beziehungsweise können die bestimmten Kriterien seiner Benennung nach dem Unionsrecht oder dem Recht der Mitgliedstaaten vorgesehen werden.</p>
+            </li>
+            <li><h4>h)    Auftragsverarbeiter</h4>
+            <p>Auftragsverarbeiter ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet.</p>
+            </li>
+            <li><h4>i)      Empfänger</h4>
+            <p>Empfänger ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, der personenbezogene Daten offengelegt werden, unabhängig davon, ob es sich bei ihr um einen Dritten handelt oder nicht. Behörden, die im Rahmen eines bestimmten Untersuchungsauftrags nach dem Unionsrecht oder dem Recht der Mitgliedstaaten möglicherweise personenbezogene Daten erhalten, gelten jedoch nicht als Empfänger.</p>
+            </li>
+            <li><h4>j)      Dritter</h4>
+            <p>Dritter ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle außer der betroffenen Person, dem Verantwortlichen, dem Auftragsverarbeiter und den Personen, die unter der unmittelbaren Verantwortung des Verantwortlichen oder des Auftragsverarbeiters befugt sind, die personenbezogenen Daten zu verarbeiten.</p>
+            </li>
+            <li><h4>k)    Einwilligung</h4>
+            <p>Einwilligung ist jede von der betroffenen Person freiwillig für den bestimmten Fall in informierter Weise und unmissverständlich abgegebene Willensbekundung in Form einer Erklärung oder einer sonstigen eindeutigen bestätigenden Handlung, mit der die betroffene Person zu verstehen gibt, dass sie mit der Verarbeitung der sie betreffenden personenbezogenen Daten einverstanden ist.</p>
+            </li>
+            </ul>
+            <br>
+            <h4 class="text-1xl  font-bold">2. Name und Anschrift des für die Verarbeitung Verantwortlichen</h4>
+            <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung, sonstiger in den Mitgliedstaaten der Europäischen Union geltenden Datenschutzgesetze und anderer Bestimmungen mit datenschutzrechtlichem Charakter ist die:</p>
+            
+            <p>Leetspeak Generator</p>
+            <p>Tegelbergstr 31</p>
+            <p>73312 Geislingen an der Steige</p>
+            <p>Deutschland</p>
+            <p>Tel.: 017673510999</p>
+            <p>E-Mail: beigel.dev@gmail.com</p>
+            <p>Website: www.leetspeak-generator.com</p>
+            <br>
+            <h4 class="text-1xl  font-bold">3. Cookies</h4>
+            <p>Die Internetseiten der Leetspeak Generator verwenden Cookies. Cookies sind Textdateien, welche über einen Internetbrowser auf einem Computersystem abgelegt und gespeichert werden.</p>
+            
+            <p>Zahlreiche Internetseiten und Server verwenden Cookies. Viele Cookies enthalten eine sogenannte Cookie-ID. Eine Cookie-ID ist eine eindeutige Kennung des Cookies. Sie besteht aus einer Zeichenfolge, durch welche Internetseiten und Server dem konkreten Internetbrowser zugeordnet werden können, in dem das Cookie gespeichert wurde. Dies ermöglicht es den besuchten Internetseiten und Servern, den individuellen Browser der betroffenen Person von anderen Internetbrowsern, die andere Cookies enthalten, zu unterscheiden. Ein bestimmter Internetbrowser kann über die eindeutige Cookie-ID wiedererkannt und identifiziert werden.</p>
+            
+            <p>Durch den Einsatz von Cookies kann die Leetspeak Generator den Nutzern dieser Internetseite nutzerfreundlichere Services bereitstellen, die ohne die Cookie-Setzung nicht möglich wären.</p>
+            
+            <p>Mittels eines Cookies können die Informationen und Angebote auf unserer Internetseite im Sinne des Benutzers optimiert werden. Cookies ermöglichen uns, wie bereits erwähnt, die Benutzer unserer Internetseite wiederzuerkennen. Zweck dieser Wiedererkennung ist es, den Nutzern die Verwendung unserer Internetseite zu erleichtern. Der Benutzer einer Internetseite, die Cookies verwendet, muss beispielsweise nicht bei jedem Besuch der Internetseite erneut seine Zugangsdaten eingeben, weil dies von der Internetseite und dem auf dem Computersystem des Benutzers abgelegten Cookie übernommen wird. Ein weiteres Beispiel ist das Cookie eines Warenkorbes im Online-Shop. Der Online-Shop merkt sich die Artikel, die ein Kunde in den virtuellen Warenkorb gelegt hat, über ein Cookie.</p>
+            
+            <p>Die betroffene Person kann die Setzung von Cookies durch unsere Internetseite jederzeit mittels einer entsprechenden Einstellung des genutzten Internetbrowsers verhindern und damit der Setzung von Cookies dauerhaft widersprechen. Ferner können bereits gesetzte Cookies jederzeit über einen Internetbrowser oder andere Softwareprogramme gelöscht werden. Dies ist in allen gängigen Internetbrowsern möglich. Deaktiviert die betroffene Person die Setzung von Cookies in dem genutzten Internetbrowser, sind unter Umständen nicht alle Funktionen unserer Internetseite vollumfänglich nutzbar.</p>
+            <br>
+            <h4 class="text-1xl  font-bold">4. Erfassung von allgemeinen Daten und Informationen</h4>
+            <p>Die Internetseite der Leetspeak Generator erfasst mit jedem Aufruf der Internetseite durch eine betroffene Person oder ein automatisiertes System eine Reihe von allgemeinen Daten und Informationen. Diese allgemeinen Daten und Informationen werden in den Logfiles des Servers gespeichert. Erfasst werden können die (1) verwendeten Browsertypen und Versionen, (2) das vom zugreifenden System verwendete Betriebssystem, (3) die Internetseite, von welcher ein zugreifendes System auf unsere Internetseite gelangt (sogenannte Referrer), (4) die Unterwebseiten, welche über ein zugreifendes System auf unserer Internetseite angesteuert werden, (5) das Datum und die Uhrzeit eines Zugriffs auf die Internetseite, (6) eine Internet-Protokoll-Adresse (IP-Adresse), (7) der Internet-Service-Provider des zugreifenden Systems und (8) sonstige ähnliche Daten und Informationen, die der Gefahrenabwehr im Falle von Angriffen auf unsere informationstechnologischen Systeme dienen.</p>
+            
+            <p>Bei der Nutzung dieser allgemeinen Daten und Informationen zieht die Leetspeak Generator keine Rückschlüsse auf die betroffene Person. Diese Informationen werden vielmehr benötigt, um (1) die Inhalte unserer Internetseite korrekt auszuliefern, (2) die Inhalte unserer Internetseite sowie die Werbung für diese zu optimieren, (3) die dauerhafte Funktionsfähigkeit unserer informationstechnologischen Systeme und der Technik unserer Internetseite zu gewährleisten sowie (4) um Strafverfolgungsbehörden im Falle eines Cyberangriffes die zur Strafverfolgung notwendigen Informationen bereitzustellen. Diese anonym erhobenen Daten und Informationen werden durch die Leetspeak Generator daher einerseits statistisch und ferner mit dem Ziel ausgewertet, den Datenschutz und die Datensicherheit in unserem Unternehmen zu erhöhen, um letztlich ein optimales Schutzniveau für die von uns verarbeiteten personenbezogenen Daten sicherzustellen. Die anonymen Daten der Server-Logfiles werden getrennt von allen durch eine betroffene Person angegebenen personenbezogenen Daten gespeichert.</p>
+            <br>
+            <h4 class="text-1xl  font-bold">5. Routinemäßige Löschung und Sperrung von personenbezogenen Daten</h4>
+            <p>Der für die Verarbeitung Verantwortliche verarbeitet und speichert personenbezogene Daten der betroffenen Person nur für den Zeitraum, der zur Erreichung des Speicherungszwecks erforderlich ist oder sofern dies durch den Europäischen Richtlinien- und Verordnungsgeber oder einen anderen Gesetzgeber in Gesetzen oder Vorschriften, welchen der für die Verarbeitung Verantwortliche unterliegt, vorgesehen wurde.</p>
+            
+            <p>Entfällt der Speicherungszweck oder läuft eine vom Europäischen Richtlinien- und Verordnungsgeber oder einem anderen zuständigen Gesetzgeber vorgeschriebene Speicherfrist ab, werden die personenbezogenen Daten routinemäßig und entsprechend den gesetzlichen Vorschriften gesperrt oder gelöscht.</p>
+            <br>
+            <h4 class="text-1xl  font-bold">6. Rechte der betroffenen Person</h4>
+            <ul style="list-style: none;">
+            <li><h4>a)    Recht auf Bestätigung</h4>
+            <p>Jede betroffene Person hat das vom Europäischen Richtlinien- und Verordnungsgeber eingeräumte Recht, von dem für die Verarbeitung Verantwortlichen eine Bestätigung darüber zu verlangen, ob sie betreffende personenbezogene Daten verarbeitet werden. Möchte eine betroffene Person dieses Bestätigungsrecht in Anspruch nehmen, kann sie sich hierzu jederzeit an einen Mitarbeiter des für die Verarbeitung Verantwortlichen wenden.</p>
+            </li>
+            <li><h4>b)    Recht auf Auskunft</h4>
+            <p>Jede von der Verarbeitung personenbezogener Daten betroffene Person hat das vom Europäischen Richtlinien- und Verordnungsgeber gewährte Recht, jederzeit von dem für die Verarbeitung Verantwortlichen unentgeltliche Auskunft über die zu seiner Person gespeicherten personenbezogenen Daten und eine Kopie dieser Auskunft zu erhalten. Ferner hat der Europäische Richtlinien- und Verordnungsgeber der betroffenen Person Auskunft über folgende Informationen zugestanden:</p>
+            
+            <ul style="list-style: none;">
+            <li>die Verarbeitungszwecke</li>
+            <li>die Kategorien personenbezogener Daten, die verarbeitet werden</li>
+            <li>die Empfänger oder Kategorien von Empfängern, gegenüber denen die personenbezogenen Daten offengelegt worden sind oder noch offengelegt werden, insbesondere bei Empfängern in Drittländern oder bei internationalen Organisationen</li>
+            <li>falls möglich die geplante Dauer, für die die personenbezogenen Daten gespeichert werden, oder, falls dies nicht möglich ist, die Kriterien für die Festlegung dieser Dauer</li>
+            <li>das Bestehen eines Rechts auf Berichtigung oder Löschung der sie betreffenden personenbezogenen Daten oder auf Einschränkung der Verarbeitung durch den Verantwortlichen oder eines Widerspruchsrechts gegen diese Verarbeitung</li>
+            <li>das Bestehen eines Beschwerderechts bei einer Aufsichtsbehörde</li>
+            <li>wenn die personenbezogenen Daten nicht bei der betroffenen Person erhoben werden: Alle verfügbaren Informationen über die Herkunft der Daten</li>
+            <li>das Bestehen einer automatisierten Entscheidungsfindung einschließlich Profiling gemäß Artikel 22 Abs.1 und 4 DS-GVO und — zumindest in diesen Fällen — aussagekräftige Informationen über die involvierte Logik sowie die Tragweite und die angestrebten Auswirkungen einer derartigen Verarbeitung für die betroffene Person</li>
+            
+            </ul>
+            <p>Ferner steht der betroffenen Person ein Auskunftsrecht darüber zu, ob personenbezogene Daten an ein Drittland oder an eine internationale Organisation übermittelt wurden. Sofern dies der Fall ist, so steht der betroffenen Person im Übrigen das Recht zu, Auskunft über die geeigneten Garantien im Zusammenhang mit der Übermittlung zu erhalten.</p>
+            
+            <p>Möchte eine betroffene Person dieses Auskunftsrecht in Anspruch nehmen, kann sie sich hierzu jederzeit an einen Mitarbeiter des für die Verarbeitung Verantwortlichen wenden.</p>
+            </li>
+            <li><h4>c)    Recht auf Berichtigung</h4>
+            <p>Jede von der Verarbeitung personenbezogener Daten betroffene Person hat das vom Europäischen Richtlinien- und Verordnungsgeber gewährte Recht, die unverzügliche Berichtigung sie betreffender unrichtiger personenbezogener Daten zu verlangen. Ferner steht der betroffenen Person das Recht zu, unter Berücksichtigung der Zwecke der Verarbeitung, die Vervollständigung unvollständiger personenbezogener Daten — auch mittels einer ergänzenden Erklärung — zu verlangen.</p>
+            
+            <p>Möchte eine betroffene Person dieses Berichtigungsrecht in Anspruch nehmen, kann sie sich hierzu jederzeit an einen Mitarbeiter des für die Verarbeitung Verantwortlichen wenden.</p></li>
+            <li>
+            <h4>d)    Recht auf Löschung (Recht auf Vergessen werden)</h4>
+            <p>Jede von der Verarbeitung personenbezogener Daten betroffene Person hat das vom Europäischen Richtlinien- und Verordnungsgeber gewährte Recht, von dem Verantwortlichen zu verlangen, dass die sie betreffenden personenbezogenen Daten unverzüglich gelöscht werden, sofern einer der folgenden Gründe zutrifft und soweit die Verarbeitung nicht erforderlich ist:</p>
+            
+            <ul style="list-style: none;">
+            <li>Die personenbezogenen Daten wurden für solche Zwecke erhoben oder auf sonstige Weise verarbeitet, für welche sie nicht mehr notwendig sind.</li>
+            <li>Die betroffene Person widerruft ihre Einwilligung, auf die sich die Verarbeitung gemäß Art. 6 Abs. 1 Buchstabe a DS-GVO oder Art. 9 Abs. 2 Buchstabe a DS-GVO stützte, und es fehlt an einer anderweitigen Rechtsgrundlage für die Verarbeitung.</li>
+            <li>Die betroffene Person legt gemäß Art. 21 Abs. 1 DS-GVO Widerspruch gegen die Verarbeitung ein, und es liegen keine vorrangigen berechtigten Gründe für die Verarbeitung vor, oder die betroffene Person legt gemäß Art. 21 Abs. 2 DS-GVO Widerspruch gegen die Verarbeitung ein.</li>
+            <li>Die personenbezogenen Daten wurden unrechtmäßig verarbeitet.</li>
+            <li>Die Löschung der personenbezogenen Daten ist zur Erfüllung einer rechtlichen Verpflichtung nach dem Unionsrecht oder dem Recht der Mitgliedstaaten erforderlich, dem der Verantwortliche unterliegt.</li>
+            <li>Die personenbezogenen Daten wurden in Bezug auf angebotene Dienste der Informationsgesellschaft gemäß Art. 8 Abs. 1 DS-GVO erhoben.</li>
+            
+            </ul>
+            <p>Sofern einer der oben genannten Gründe zutrifft und eine betroffene Person die Löschung von personenbezogenen Daten, die bei der Leetspeak Generator gespeichert sind, veranlassen möchte, kann sie sich hierzu jederzeit an einen Mitarbeiter des für die Verarbeitung Verantwortlichen wenden. Der Mitarbeiter der Leetspeak Generator wird veranlassen, dass dem Löschverlangen unverzüglich nachgekommen wird.</p>
+            
+            <p>Wurden die personenbezogenen Daten von der Leetspeak Generator öffentlich gemacht und ist unser Unternehmen als Verantwortlicher gemäß Art. 17 Abs. 1 DS-GVO zur Löschung der personenbezogenen Daten verpflichtet, so trifft die Leetspeak Generator unter Berücksichtigung der verfügbaren Technologie und der Implementierungskosten angemessene Maßnahmen, auch technischer Art, um andere für die Datenverarbeitung Verantwortliche, welche die veröffentlichten personenbezogenen Daten verarbeiten, darüber in Kenntnis zu setzen, dass die betroffene Person von diesen anderen für die Datenverarbeitung Verantwortlichen die Löschung sämtlicher Links zu diesen personenbezogenen Daten oder von Kopien oder Replikationen dieser personenbezogenen Daten verlangt hat, soweit die Verarbeitung nicht erforderlich ist. Der Mitarbeiter der Leetspeak Generator wird im Einzelfall das Notwendige veranlassen.</p>
+            </li>
+            <li><h4>e)    Recht auf Einschränkung der Verarbeitung</h4>
+            <p>Jede von der Verarbeitung personenbezogener Daten betroffene Person hat das vom Europäischen Richtlinien- und Verordnungsgeber gewährte Recht, von dem Verantwortlichen die Einschränkung der Verarbeitung zu verlangen, wenn eine der folgenden Voraussetzungen gegeben ist:</p>
+            
+            <ul style="list-style: none;">
+            <li>Die Richtigkeit der personenbezogenen Daten wird von der betroffenen Person bestritten, und zwar für eine Dauer, die es dem Verantwortlichen ermöglicht, die Richtigkeit der personenbezogenen Daten zu überprüfen.</li>
+            <li>Die Verarbeitung ist unrechtmäßig, die betroffene Person lehnt die Löschung der personenbezogenen Daten ab und verlangt stattdessen die Einschränkung der Nutzung der personenbezogenen Daten.</li>
+            <li>Der Verantwortliche benötigt die personenbezogenen Daten für die Zwecke der Verarbeitung nicht länger, die betroffene Person benötigt sie jedoch zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.</li>
+            <li>Die betroffene Person hat Widerspruch gegen die Verarbeitung gem. Art. 21 Abs. 1 DS-GVO eingelegt und es steht noch nicht fest, ob die berechtigten Gründe des Verantwortlichen gegenüber denen der betroffenen Person überwiegen.</li>
+            
+            </ul>
+            <p>Sofern eine der oben genannten Voraussetzungen gegeben ist und eine betroffene Person die Einschränkung von personenbezogenen Daten, die bei der Leetspeak Generator gespeichert sind, verlangen möchte, kann sie sich hierzu jederzeit an einen Mitarbeiter des für die Verarbeitung Verantwortlichen wenden. Der Mitarbeiter der Leetspeak Generator wird die Einschränkung der Verarbeitung veranlassen.</p>
+            </li>
+            <li><h4>f)     Recht auf Datenübertragbarkeit</h4>
+            <p>Jede von der Verarbeitung personenbezogener Daten betroffene Person hat das vom Europäischen Richtlinien- und Verordnungsgeber gewährte Recht, die sie betreffenden personenbezogenen Daten, welche durch die betroffene Person einem Verantwortlichen bereitgestellt wurden, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten. Sie hat außerdem das Recht, diese Daten einem anderen Verantwortlichen ohne Behinderung durch den Verantwortlichen, dem die personenbezogenen Daten bereitgestellt wurden, zu übermitteln, sofern die Verarbeitung auf der Einwilligung gemäß Art. 6 Abs. 1 Buchstabe a DS-GVO oder Art. 9 Abs. 2 Buchstabe a DS-GVO oder auf einem Vertrag gemäß Art. 6 Abs. 1 Buchstabe b DS-GVO beruht und die Verarbeitung mithilfe automatisierter Verfahren erfolgt, sofern die Verarbeitung nicht für die Wahrnehmung einer Aufgabe erforderlich ist, die im öffentlichen Interesse liegt oder in Ausübung öffentlicher Gewalt erfolgt, welche dem Verantwortlichen übertragen wurde.</p>
+            
+            <p>Ferner hat die betroffene Person bei der Ausübung ihres Rechts auf Datenübertragbarkeit gemäß Art. 20 Abs. 1 DS-GVO das Recht, zu erwirken, dass die personenbezogenen Daten direkt von einem Verantwortlichen an einen anderen Verantwortlichen übermittelt werden, soweit dies technisch machbar ist und sofern hiervon nicht die Rechte und Freiheiten anderer Personen beeinträchtigt werden.</p>
+            
+            <p>Zur Geltendmachung des Rechts auf Datenübertragbarkeit kann sich die betroffene Person jederzeit an einen Mitarbeiter der Leetspeak Generator wenden.</p>
+            
+            </li>
+            <li>
+            <h4>g)    Recht auf Widerspruch</h4>
+            <p>Jede von der Verarbeitung personenbezogener Daten betroffene Person hat das vom Europäischen Richtlinien- und Verordnungsgeber gewährte Recht, aus Gründen, die sich aus ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung sie betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs. 1 Buchstaben e oder f DS-GVO erfolgt, Widerspruch einzulegen. Dies gilt auch für ein auf diese Bestimmungen gestütztes Profiling.</p>
+            
+            <p>Die Leetspeak Generator verarbeitet die personenbezogenen Daten im Falle des Widerspruchs nicht mehr, es sei denn, wir können zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die den Interessen, Rechten und Freiheiten der betroffenen Person überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.</p>
+            
+            <p>Verarbeitet die Leetspeak Generator personenbezogene Daten, um Direktwerbung zu betreiben, so hat die betroffene Person das Recht, jederzeit Widerspruch gegen die Verarbeitung der personenbezogenen Daten zum Zwecke derartiger Werbung einzulegen. Dies gilt auch für das Profiling, soweit es mit solcher Direktwerbung in Verbindung steht. Widerspricht die betroffene Person gegenüber der Leetspeak Generator der Verarbeitung für Zwecke der Direktwerbung, so wird die Leetspeak Generator die personenbezogenen Daten nicht mehr für diese Zwecke verarbeiten.</p>
+            
+            <p>Zudem hat die betroffene Person das Recht, aus Gründen, die sich aus ihrer besonderen Situation ergeben, gegen die sie betreffende Verarbeitung personenbezogener Daten, die bei der Leetspeak Generator zu wissenschaftlichen oder historischen Forschungszwecken oder zu statistischen Zwecken gemäß Art. 89 Abs. 1 DS-GVO erfolgen, Widerspruch einzulegen, es sei denn, eine solche Verarbeitung ist zur Erfüllung einer im öffentlichen Interesse liegenden Aufgabe erforderlich.</p>
+            
+            <p>Zur Ausübung des Rechts auf Widerspruch kann sich die betroffene Person direkt an jeden Mitarbeiter der Leetspeak Generator oder einen anderen Mitarbeiter wenden. Der betroffenen Person steht es ferner frei, im Zusammenhang mit der Nutzung von Diensten der Informationsgesellschaft, ungeachtet der Richtlinie 2002/58/EG, ihr Widerspruchsrecht mittels automatisierter Verfahren auszuüben, bei denen technische Spezifikationen verwendet werden.</p>
+            </li>
+            <li><h4>h)    Automatisierte Entscheidungen im Einzelfall einschließlich Profiling</h4>
+            <p>Jede von der Verarbeitung personenbezogener Daten betroffene Person hat das vom Europäischen Richtlinien- und Verordnungsgeber gewährte Recht, nicht einer ausschließlich auf einer automatisierten Verarbeitung — einschließlich Profiling — beruhenden Entscheidung unterworfen zu werden, die ihr gegenüber rechtliche Wirkung entfaltet oder sie in ähnlicher Weise erheblich beeinträchtigt, sofern die Entscheidung (1) nicht für den Abschluss oder die Erfüllung eines Vertrags zwischen der betroffenen Person und dem Verantwortlichen erforderlich ist, oder (2) aufgrund von Rechtsvorschriften der Union oder der Mitgliedstaaten, denen der Verantwortliche unterliegt, zulässig ist und diese Rechtsvorschriften angemessene Maßnahmen zur Wahrung der Rechte und Freiheiten sowie der berechtigten Interessen der betroffenen Person enthalten oder (3) mit ausdrücklicher Einwilligung der betroffenen Person erfolgt.</p>
+            
+            <p>Ist die Entscheidung (1) für den Abschluss oder die Erfüllung eines Vertrags zwischen der betroffenen Person und dem Verantwortlichen erforderlich oder (2) erfolgt sie mit ausdrücklicher Einwilligung der betroffenen Person, trifft die Leetspeak Generator angemessene Maßnahmen, um die Rechte und Freiheiten sowie die berechtigten Interessen der betroffenen Person zu wahren, wozu mindestens das Recht auf Erwirkung des Eingreifens einer Person seitens des Verantwortlichen, auf Darlegung des eigenen Standpunkts und auf Anfechtung der Entscheidung gehört.</p>
+            
+            <p>Möchte die betroffene Person Rechte mit Bezug auf automatisierte Entscheidungen geltend machen, kann sie sich hierzu jederzeit an einen Mitarbeiter des für die Verarbeitung Verantwortlichen wenden.</p>
+            
+            </li>
+            <li><h4>i)      Recht auf Widerruf einer datenschutzrechtlichen Einwilligung</h4>
+            <p>Jede von der Verarbeitung personenbezogener Daten betroffene Person hat das vom Europäischen Richtlinien- und Verordnungsgeber gewährte Recht, eine Einwilligung zur Verarbeitung personenbezogener Daten jederzeit zu widerrufen.</p>
+            
+            <p>Möchte die betroffene Person ihr Recht auf Widerruf einer Einwilligung geltend machen, kann sie sich hierzu jederzeit an einen Mitarbeiter des für die Verarbeitung Verantwortlichen wenden.</p>
+            
+            </li>
+            </ul>
+            <br>
+            <h4 class="text-1xl  font-bold">7. Rechtsgrundlage der Verarbeitung</h4>
+            <p>Art. 6 I lit. a DS-GVO dient unserem Unternehmen als Rechtsgrundlage für Verarbeitungsvorgänge, bei denen wir eine Einwilligung für einen bestimmten Verarbeitungszweck einholen. Ist die Verarbeitung personenbezogener Daten zur Erfüllung eines Vertrags, dessen Vertragspartei die betroffene Person ist, erforderlich, wie dies beispielsweise bei Verarbeitungsvorgängen der Fall ist, die für eine Lieferung von Waren oder die Erbringung einer sonstigen Leistung oder Gegenleistung notwendig sind, so beruht die Verarbeitung auf Art. 6 I lit. b DS-GVO. Gleiches gilt für solche Verarbeitungsvorgänge die zur Durchführung vorvertraglicher Maßnahmen erforderlich sind, etwa in Fällen von Anfragen zur unseren Produkten oder Leistungen. Unterliegt unser Unternehmen einer rechtlichen Verpflichtung durch welche eine Verarbeitung von personenbezogenen Daten erforderlich wird, wie beispielsweise zur Erfüllung steuerlicher Pflichten, so basiert die Verarbeitung auf Art. 6 I lit. c DS-GVO. In seltenen Fällen könnte die Verarbeitung von personenbezogenen Daten erforderlich werden, um lebenswichtige Interessen der betroffenen Person oder einer anderen natürlichen Person zu schützen. Dies wäre beispielsweise der Fall, wenn ein Besucher in unserem Betrieb verletzt werden würde und daraufhin sein Name, sein Alter, seine Krankenkassendaten oder sonstige lebenswichtige Informationen an einen Arzt, ein Krankenhaus oder sonstige Dritte weitergegeben werden müssten. Dann würde die Verarbeitung auf Art. 6 I lit. d DS-GVO beruhen.
+            Letztlich könnten Verarbeitungsvorgänge auf Art. 6 I lit. f DS-GVO beruhen. Auf dieser Rechtsgrundlage basieren Verarbeitungsvorgänge, die von keiner der vorgenannten Rechtsgrundlagen erfasst werden, wenn die Verarbeitung zur Wahrung eines berechtigten Interesses unseres Unternehmens oder eines Dritten erforderlich ist, sofern die Interessen, Grundrechte und Grundfreiheiten des Betroffenen nicht überwiegen. Solche Verarbeitungsvorgänge sind uns insbesondere deshalb gestattet, weil sie durch den Europäischen Gesetzgeber besonders erwähnt wurden. Er vertrat insoweit die Auffassung, dass ein berechtigtes Interesse anzunehmen sein könnte, wenn die betroffene Person ein Kunde des Verantwortlichen ist (Erwägungsgrund 47 Satz 2 DS-GVO).
+            </p>
+            <br>
+            <h4 class="text-1xl  font-bold">8. Berechtigte Interessen an der Verarbeitung, die von dem Verantwortlichen oder einem Dritten verfolgt werden</h4>
+            <p>Basiert die Verarbeitung personenbezogener Daten auf Artikel 6 I lit. f DS-GVO ist unser berechtigtes Interesse die Durchführung unserer Geschäftstätigkeit zugunsten des Wohlergehens all unserer Mitarbeiter und unserer Anteilseigner.</p>
+            <br>
+            <h4 class="text-1xl  font-bold">9. Dauer, für die die personenbezogenen Daten gespeichert werden</h4>
+            <p>Das Kriterium für die Dauer der Speicherung von personenbezogenen Daten ist die jeweilige gesetzliche Aufbewahrungsfrist. Nach Ablauf der Frist werden die entsprechenden Daten routinemäßig gelöscht, sofern sie nicht mehr zur Vertragserfüllung oder Vertragsanbahnung erforderlich sind.</p>
+            <br>
+            <h4 class="text-1xl  font-bold">10. Gesetzliche oder vertragliche Vorschriften zur Bereitstellung der personenbezogenen Daten; Erforderlichkeit für den Vertragsabschluss; Verpflichtung der betroffenen Person, die personenbezogenen Daten bereitzustellen; mögliche Folgen der Nichtbereitstellung</h4>
+            <p>Wir klären Sie darüber auf, dass die Bereitstellung personenbezogener Daten zum Teil gesetzlich vorgeschrieben ist (z.B. Steuervorschriften) oder sich auch aus vertraglichen Regelungen (z.B. Angaben zum Vertragspartner) ergeben kann.
+            Mitunter kann es zu einem Vertragsschluss erforderlich sein, dass eine betroffene Person uns personenbezogene Daten zur Verfügung stellt, die in der Folge durch uns verarbeitet werden müssen. Die betroffene Person ist beispielsweise verpflichtet uns personenbezogene Daten bereitzustellen, wenn unser Unternehmen mit ihr einen Vertrag abschließt. Eine Nichtbereitstellung der personenbezogenen Daten hätte zur Folge, dass der Vertrag mit dem Betroffenen nicht geschlossen werden könnte.
+            Vor einer Bereitstellung personenbezogener Daten durch den Betroffenen muss sich der Betroffene an einen unserer Mitarbeiter wenden. Unser Mitarbeiter klärt den Betroffenen einzelfallbezogen darüber auf, ob die Bereitstellung der personenbezogenen Daten gesetzlich oder vertraglich vorgeschrieben oder für den Vertragsabschluss erforderlich ist, ob eine Verpflichtung besteht, die personenbezogenen Daten bereitzustellen, und welche Folgen die Nichtbereitstellung der personenbezogenen Daten hätte.
+            </p>
+            <br>
+            <h4 class="text-1xl  font-bold">11. Bestehen einer automatisierten Entscheidungsfindung</h4>
+            <p>Als verantwortungsbewusstes Unternehmen verzichten wir auf eine automatische Entscheidungsfindung oder ein Profiling.</p>
+            
+            <p>Entwickelt von den <a href="https://willing-able.com/">Legal Tech</a> Spezialisten von Willing & Able, die auch das System für  das digitale <a href="https://abletorecords.com/">Verzeichnis von Verarbeitungstätigkeiten</a> entwickelt haben. Die Texte des Datenschutzerklärungs-Generators wurden von <a href="https://dg-datenschutz.de/">Prof. Dr. h.c. Heiko Jonny Maniero</a> und Rechtsanwalt <a href="https://www.wbs.legal/" rel="nofollow">Christian Solmecke</a> erstellt und publiziert.</p>
+            
+            
+        </div>
 
-                <p>Stand: 11. Januar 2024</p>
-                <h2>Inhaltsübersicht</h2>
-                <ul class="index">
-                    <li><a class="index-link" href="#m716">Präambel</a></li>
-                    <li><a class="index-link" href="#m3">Verantwortlicher</a></li>
-                    <li><a class="index-link" href="#mOverview">Übersicht der Verarbeitungen</a></li>
-                    <li><a class="index-link" href="#m2427">Maßgebliche Rechtsgrundlagen</a></li>
-                    <li><a class="index-link" href="#m134">Einsatz von Cookies</a></li>
-                    <li><a class="index-link" href="#m263">Webanalyse, Monitoring und Optimierung</a></li>
-                    <li><a class="index-link" href="#m328">Plugins und eingebettete Funktionen sowie Inhalte</a></li>
-                    <li><a class="index-link" href="#m42">Begriffsdefinitionen</a></li>
-                </ul>
-                <h2 id="m3">Verantwortlicher</h2>
-                <p>Christian Beigelbeck<br>Tegelbergstr 31<br>73312 Geislingen an der Steige<br>Germany</p>
-                E-Mail-Adresse: <a href="mailto:beigel.dev@gmail.com">beigel.dev@gmail.com</a>
+        <button class="btn btn-neutral" onclick="topFunction()" id="scrollToTopBtn" title="Go to top">Top</button>
 
-                <h2 id="mOverview">Übersicht der Verarbeitungen</h2>
-                <p>Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten und die Zwecke ihrer Verarbeitung
-                    zusammen und verweist auf die betroffenen Personen.</p>
-                <h3>Arten der verarbeiteten Daten</h3>
-                <ul>
-                    <li>Nutzungsdaten.</li>
-                    <li>Meta-, Kommunikations- und Verfahrensdaten.</li>
-                </ul>
-                <h3>Kategorien betroffener Personen</h3>
-                <ul>
-                    <li>Nutzer.</li>
-                </ul>
-                <h3>Zwecke der Verarbeitung</h3>
-                <ul>
-                    <li>Reichweitenmessung.</li>
-                    <li>Profile mit nutzerbezogenen Informationen.</li>
-                    <li>Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit.</li>
-                </ul>
-                <h2 id="m2427">Maßgebliche Rechtsgrundlagen</h2>
-                <p><strong>Maßgebliche Rechtsgrundlagen nach der DSGVO: </strong>Im Folgenden erhalten Sie eine
-                    Übersicht der Rechtsgrundlagen der DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten.
-                    Bitte nehmen Sie zur Kenntnis, dass neben den Regelungen der DSGVO nationale Datenschutzvorgaben in
-                    Ihrem bzw. unserem Wohn- oder Sitzland gelten können. Sollten ferner im Einzelfall speziellere
-                    Rechtsgrundlagen maßgeblich sein, teilen wir Ihnen diese in der Datenschutzerklärung mit.</p>
-                <ul>
-                    <li><strong>Einwilligung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO)</strong> - Die betroffene Person hat
-                        ihre Einwilligung in die Verarbeitung der sie betreffenden personenbezogenen Daten für einen
-                        spezifischen Zweck oder mehrere bestimmte Zwecke gegeben.</li>
-                    <li><strong>Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO)</strong> - Die Verarbeitung
-                        ist zur Wahrung der berechtigten Interessen des Verantwortlichen oder eines Dritten
-                        erforderlich, sofern nicht die Interessen oder Grundrechte und Grundfreiheiten der betroffenen
-                        Person, die den Schutz personenbezogener Daten erfordern, überwiegen.</li>
-                </ul>
-                <p><strong>Nationale Datenschutzregelungen in Deutschland: </strong>Zusätzlich zu den
-                    Datenschutzregelungen der DSGVO gelten nationale Regelungen zum Datenschutz in Deutschland. Hierzu
-                    gehört insbesondere das Gesetz zum Schutz vor Missbrauch personenbezogener Daten bei der
-                    Datenverarbeitung (Bundesdatenschutzgesetz – BDSG). Das BDSG enthält insbesondere Spezialregelungen
-                    zum Recht auf Auskunft, zum Recht auf Löschung, zum Widerspruchsrecht, zur Verarbeitung besonderer
-                    Kategorien personenbezogener Daten, zur Verarbeitung für andere Zwecke und zur Übermittlung sowie
-                    automatisierten Entscheidungsfindung im Einzelfall einschließlich Profiling. Ferner können
-                    Landesdatenschutzgesetze der einzelnen Bundesländer zur Anwendung gelangen.</p>
-                <p><strong>Hinweis auf Geltung DSGVO und Schweizer DSG: </strong>Diese Datenschutzhinweise dienen sowohl
-                    der Informationserteilung nach dem schweizerischen Bundesgesetz über den Datenschutz (Schweizer DSG)
-                    als auch nach der Datenschutzgrundverordnung (DSGVO). Aus diesem Grund bitten wir Sie zu beachten,
-                    dass aufgrund der breiteren räumlichen Anwendung und Verständlichkeit die Begriffe der DSGVO
-                    verwendet werden. Insbesondere statt der im Schweizer DSG verwendeten Begriffe „Bearbeitung" von
-                    „Personendaten", "überwiegendes Interesse" und "besonders schützenswerte Personendaten" werden die
-                    in der DSGVO verwendeten Begriffe „Verarbeitung" von „personenbezogenen Daten" sowie "berechtigtes
-                    Interesse" und "besondere Kategorien von Daten" verwendet. Die gesetzliche Bedeutung der Begriffe
-                    wird jedoch im Rahmen der Geltung des Schweizer DSG weiterhin nach dem Schweizer DSG bestimmt.</p>
-
-                <h2 id="m134">Einsatz von Cookies</h2>
-                <p>Cookies sind kleine Textdateien, bzw. sonstige Speichervermerke, die Informationen auf Endgeräten
-                    speichern und Informationen aus den Endgeräten auslesen. Z. B. um den Login-Status in einem
-                    Nutzerkonto, einen Warenkorbinhalt in einem E-Shop, die aufgerufenen Inhalte oder verwendete
-                    Funktionen eines Onlineangebotes speichern. Cookies können ferner zu unterschiedlichen Zwecken
-                    eingesetzt werden, z. B. zu Zwecken der Funktionsfähigkeit, Sicherheit und Komfort von
-                    Onlineangeboten sowie der Erstellung von Analysen der Besucherströme. </p>
-                <p><strong>Hinweise zur Einwilligung: </strong>Wir setzen Cookies im Einklang mit den gesetzlichen
-                    Vorschriften ein. Daher holen wir von den Nutzern eine vorhergehende Einwilligung ein, außer wenn
-                    diese gesetzlich nicht gefordert ist. Eine Einwilligung ist insbesondere nicht notwendig, wenn das
-                    Speichern und das Auslesen der Informationen, also auch von Cookies, unbedingt erforderlich sind, um
-                    dem den Nutzern einen von ihnen ausdrücklich gewünschten Telemediendienst (also unser Onlineangebot)
-                    zur Verfügung zu stellen. Zu den unbedingt erforderlichen Cookies gehören in der Regel Cookies mit
-                    Funktionen, die der Anzeige und Lauffähigkeit des Onlineangebotes , dem Lastausgleich, der
-                    Sicherheit, der Speicherung der Präferenzen und Auswahlmöglichkeiten der Nutzer oder ähnlichen mit
-                    der Bereitstellung der Haupt- und Nebenfunktionen des von den Nutzern angeforderten Onlineangebotes
-                    zusammenhängenden Zwecken dienen. Die widerrufliche Einwilligung wird gegenüber den Nutzern deutlich
-                    kommuniziert und enthält die Informationen zu der jeweiligen Cookie-Nutzung.</p>
-                <p><strong>Hinweise zu datenschutzrechtlichen Rechtsgrundlagen: </strong>Auf welcher
-                    datenschutzrechtlichen Rechtsgrundlage wir die personenbezogenen Daten der Nutzer mit Hilfe von
-                    Cookies verarbeiten, hängt davon ab, ob wir Nutzer um eine Einwilligung bitten. Falls die Nutzer
-                    einwilligen, ist die Rechtsgrundlage der Verarbeitung Ihrer Daten die erklärte Einwilligung.
-                    Andernfalls werden die mithilfe von Cookies verarbeiteten Daten auf Grundlage unserer berechtigten
-                    Interessen (z. B. an einem betriebswirtschaftlichen Betrieb unseres Onlineangebotes und Verbesserung
-                    seiner Nutzbarkeit) verarbeitet oder, wenn dies im Rahmen der Erfüllung unserer vertraglichen
-                    Pflichten erfolgt, wenn der Einsatz von Cookies erforderlich ist, um unsere vertraglichen
-                    Verpflichtungen zu erfüllen. Zu welchen Zwecken die Cookies von uns verarbeitet werden, darüber
-                    klären wir im Laufe dieser Datenschutzerklärung oder im Rahmen von unseren Einwilligungs- und
-                    Verarbeitungsprozessen auf.</p>
-                <p><strong>Speicherdauer: </strong>Im Hinblick auf die Speicherdauer werden die folgenden Arten von
-                    Cookies unterschieden:</p>
-                <ul>
-                    <li><strong>Temporäre Cookies (auch: Session- oder Sitzungs-Cookies):</strong> Temporäre Cookies
-                        werden spätestens gelöscht, nachdem ein Nutzer ein Online-Angebot verlassen und sein Endgerät
-                        (z. B. Browser oder mobile Applikation) geschlossen hat.</li>
-                    <li><strong>Permanente Cookies:</strong> Permanente Cookies bleiben auch nach dem Schließen des
-                        Endgerätes gespeichert. So können beispielsweise der Login-Status gespeichert oder bevorzugte
-                        Inhalte direkt angezeigt werden, wenn der Nutzer eine Website erneut besucht. Ebenso können die
-                        mit Hilfe von Cookies erhobenen Daten der Nutzer zur Reichweitenmessung verwendet werden. Sofern
-                        wir Nutzern keine expliziten Angaben zur Art und Speicherdauer von Cookies mitteilen (z. B. im
-                        Rahmen der Einholung der Einwilligung), sollten Nutzer davon ausgehen, dass Cookies permanent
-                        sind und die Speicherdauer bis zu zwei Jahre betragen kann.</li>
-                </ul>
-                <p><strong>Allgemeine Hinweise zum Widerruf und Widerspruch (sog. "Opt-Out"): </strong>Nutzer können die
-                    von ihnen abgegebenen Einwilligungen jederzeit widerrufen und der Verarbeitung entsprechend den
-                    gesetzlichen Vorgaben widersprechen. Hierzu können Nutzer unter anderem die Verwendung von Cookies
-                    in den Einstellungen ihres Browsers einschränken (wobei dadurch auch die Funktionalität unseres
-                    Onlineangebotes eingeschränkt sein kann). Ein Widerspruch gegen die Verwendung von Cookies zu
-                    Online-Marketing-Zwecken kann auch über die Websites <a href="https://optout.aboutads.info/"
-                        target="_new">https://optout.aboutads.info</a> und <a href="https://www.youronlinechoices.com/"
-                        target="_new">https://www.youronlinechoices.com/</a> erklärt werden.</p>
-                <ul class="m-elements">
-                    <li class=""><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f)
-                        DSGVO). Einwilligung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO).</li>
-                </ul>
-                <p><strong>Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:</strong></p>
-                <ul class="m-elements">
-                    <li><strong>Verarbeitung von Cookie-Daten auf Grundlage einer Einwilligung: </strong>Wir setzen ein
-                        Verfahren zum Cookie-Einwilligungs-Management ein, in dessen Rahmen die Einwilligungen der
-                        Nutzer in den Einsatz von Cookies, bzw. der im Rahmen des
-                        Cookie-Einwilligungs-Management-Verfahrens genannten Verarbeitungen und Anbieter eingeholt sowie
-                        von den Nutzern verwaltet und widerrufen werden können. Hierbei wird die Einwilligungserklärung
-                        gespeichert, um deren Abfrage nicht erneut wiederholen zu müssen und die Einwilligung
-                        entsprechend der gesetzlichen Verpflichtung nachweisen zu können. Die Speicherung kann
-                        serverseitig und/oder in einem Cookie (sogenanntes Opt-In-Cookie, bzw. mithilfe vergleichbarer
-                        Technologien) erfolgen, um die Einwilligung einem Nutzer, bzw. dessen Gerät zuordnen zu können.
-                        Vorbehaltlich individueller Angaben zu den Anbietern von Cookie-Management-Diensten, gelten die
-                        folgenden Hinweise: Die Dauer der Speicherung der Einwilligung kann bis zu zwei Jahren betragen.
-                        Hierbei wird ein pseudonymer Nutzer-Identifikator gebildet und mit dem Zeitpunkt der
-                        Einwilligung, Angaben zur Reichweite der Einwilligung (z. B. welche Kategorien von Cookies
-                        und/oder Diensteanbieter) sowie dem Browser, System und verwendeten Endgerät gespeichert; <span
-                            class=""><strong>Rechtsgrundlagen:</strong> Einwilligung (Art. 6 Abs. 1 S. 1 lit. a)
-                            DSGVO).</span></li>
-                </ul>
-                <h2 id="m263">Webanalyse, Monitoring und Optimierung</h2>
-                <p>Die Webanalyse (auch als "Reichweitenmessung" bezeichnet) dient der Auswertung der Besucherströme
-                    unseres Onlineangebotes und kann Verhalten, Interessen oder demographische Informationen zu den
-                    Besuchern, wie z. B. das Alter oder das Geschlecht, als pseudonyme Werte umfassen. Mit Hilfe der
-                    Reichweitenanalyse können wir z. B. erkennen, zu welcher Zeit unser Onlineangebot oder dessen
-                    Funktionen oder Inhalte am häufigsten genutzt werden oder zur Wiederverwendung einladen. Ebenso
-                    können wir nachvollziehen, welche Bereiche der Optimierung bedürfen. </p>
-                <p>Neben der Webanalyse können wir auch Testverfahren einsetzen, um z. B. unterschiedliche Versionen
-                    unseres Onlineangebotes oder seiner Bestandteile zu testen und optimieren.</p>
-                <p>Sofern nachfolgend nicht anders angegeben, können zu diesen Zwecken Profile, d. h. zu einem
-                    Nutzungsvorgang zusammengefasste Daten angelegt und Informationen in einem Browser, bzw. in einem
-                    Endgerät gespeichert und aus diesem ausgelesen werden. Zu den erhobenen Angaben gehören insbesondere
-                    besuchte Webseiten und dort genutzte Elemente sowie technische Angaben, wie der verwendete Browser,
-                    das verwendete Computersystem sowie Angaben zu Nutzungszeiten. Sofern Nutzer in die Erhebung ihrer
-                    Standortdaten uns gegenüber oder gegenüber den Anbietern der von uns eingesetzten Dienste
-                    einverstanden erklärt haben, können auch Standortdaten verarbeitet werden.</p>
-                <p>Es werden ebenfalls die IP-Adressen der Nutzer gespeichert. Jedoch nutzen wir ein
-                    IP-Masking-Verfahren (d. h., Pseudonymisierung durch Kürzung der IP-Adresse) zum Schutz der Nutzer.
-                    Generell werden die im Rahmen von Webanalyse, A/B-Testings und Optimierung keine Klardaten der
-                    Nutzer (wie z. B. E-Mail-Adressen oder Namen) gespeichert, sondern Pseudonyme. D. h., wir als auch
-                    die Anbieter der eingesetzten Software kennen nicht die tatsächliche Identität der Nutzer, sondern
-                    nur den für Zwecke der jeweiligen Verfahren in deren Profilen gespeicherten Angaben.</p>
-                <ul class="m-elements">
-                    <li><strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z. B. besuchte Webseiten, Interesse an
-                        Inhalten, Zugriffszeiten); Meta-, Kommunikations- und Verfahrensdaten (z. .B. IP-Adressen,
-                        Zeitangaben, Identifikationsnummern, Einwilligungsstatus).</li>
-                    <li><strong>Betroffene Personen:</strong> Nutzer (z. .B. Webseitenbesucher, Nutzer von
-                        Onlinediensten).</li>
-                    <li><strong>Zwecke der Verarbeitung:</strong> Reichweitenmessung (z. B. Zugriffsstatistiken,
-                        Erkennung wiederkehrender Besucher); Profile mit nutzerbezogenen Informationen (Erstellen von
-                        Nutzerprofilen). Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit.</li>
-                    <li><strong>Sicherheitsmaßnahmen:</strong> IP-Masking (Pseudonymisierung der IP-Adresse).</li>
-                    <li class=""><strong>Rechtsgrundlagen:</strong> Einwilligung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO).
-                    </li>
-                </ul>
-                <p><strong>Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:</strong></p>
-                <ul class="m-elements">
-                    <li><strong>Google Analytics 4: </strong>Wir verwenden Google Analytics zur Messung und Analyse der
-                        Nutzung unseres Onlineangebotes auf der Grundlage einer pseudonymen Nutzeridentifikationsnummer.
-                        Diese Identifikationsnummer enthält keine eindeutigen Daten, wie Namen oder E-Mail-Adressen. Sie
-                        dient dazu, Analyseinformationen einem Endgerät zuzuordnen, um zu erkennen, welche Inhalte die
-                        Nutzer innerhalb eines oder verschiedener Nutzungsvorgänge aufgerufen haben, welche Suchbegriffe
-                        sie verwendet haben, diese erneut aufgerufen haben oder mit unserem Onlineangebot interagiert
-                        haben. Ebenso werden der Zeitpunkt der Nutzung und deren Dauer gespeichert, sowie die Quellen
-                        der Nutzer, die auf unser Onlineangebot verweisen und technische Aspekte ihrer Endgeräte und
-                        Browser. Dabei werden pseudonyme Profile von Nutzern mit Informationen aus der Nutzung
-                        verschiedener Geräte erstellt, wobei Cookies eingesetzt werden können. Google Analytics
-                        protokolliert und speichert keine individuellen IP-Adressen für EU-Nutzer. Analytics stellt
-                        jedoch grobe geografische Standortdaten bereit, indem es die folgenden Metadaten von IP-Adressen
-                        ableitet: Stadt (und der abgeleitete Breiten- und Längengrad der Stadt), Kontinent, Land,
-                        Region, Subkontinent (und ID-basierte Gegenstücke). Beim EU-Datenverkehr werden die
-                        IP-Adressdaten ausschließlich für diese Ableitung von Geolokalisierungsdaten verwendet, bevor
-                        sie sofort gelöscht werden. Sie werden nicht protokolliert, sind nicht zugänglich und werden
-                        nicht für weitere Verwendungszwecke genutzt. Wenn Google Analytics Messdaten sammelt, werden
-                        alle IP-Abfragen auf EU-basierten Servern durchgeführt, bevor der Verkehr zur Verarbeitung an
-                        Analytics-Server weitergeleitet wird; <strong>Dienstanbieter:</strong> Google Ireland Limited,
-                        Gordon House, Barrow Street, Dublin 4, Irland; <span class=""><strong>Rechtsgrundlagen:</strong>
-                            Einwilligung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO); </span><strong>Website:</strong> <a
-                            href="https://marketingplatform.google.com/intl/de/about/analytics/"
-                            target="_blank">https://marketingplatform.google.com/intl/de/about/analytics/</a>;
-                        <strong>Datenschutzerklärung:</strong> <a href="https://policies.google.com/privacy"
-                            target="_blank">https://policies.google.com/privacy</a>;
-                        <strong>Auftragsverarbeitungsvertrag:</strong> <a
-                            href="https://business.safety.google/adsprocessorterms/"
-                            target="_blank">https://business.safety.google/adsprocessorterms/</a>; <strong>Grundlage
-                            Drittlandübermittlung:</strong> <span class=""> EU-US Data Privacy Framework (DPF),
-                        </span>Standardvertragsklauseln (<a href="https://business.safety.google/adsprocessorterms"
-                            target="_blank">https://business.safety.google/adsprocessorterms</a>);
-                        <strong>Widerspruchsmöglichkeit (Opt-Out):</strong> Opt-Out-Plugin: <a
-                            href="https://tools.google.com/dlpage/gaoptout?hl=de"
-                            target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die
-                        Darstellung von Werbeeinblendungen: <a href="https://myadcenter.google.com/personalizationoff"
-                            target="_blank">https://myadcenter.google.com/personalizationoff</a>. <strong>Weitere
-                            Informationen:</strong> <a href="https://business.safety.google/adsservices/"
-                            target="_blank">https://business.safety.google/adsservices/</a> (Arten der Verarbeitung
-                        sowie der verarbeiteten Daten).</li>
-                </ul>
-                <h2 id="m328">Plugins und eingebettete Funktionen sowie Inhalte</h2>
-                <p>Wir binden in unser Onlineangebot Funktions- und Inhaltselemente ein, die von den Servern ihrer
-                    jeweiligen Anbieter (nachfolgend bezeichnet als "Drittanbieter") bezogen werden. Dabei kann es sich
-                    zum Beispiel um Grafiken, Videos oder Stadtpläne handeln (nachfolgend einheitlich bezeichnet als
-                    "Inhalte").</p>
-                <p>Die Einbindung setzt immer voraus, dass die Drittanbieter dieser Inhalte die IP-Adresse der Nutzer
-                    verarbeiten, da sie ohne die IP-Adresse die Inhalte nicht an deren Browser senden könnten. Die
-                    IP-Adresse ist damit für die Darstellung dieser Inhalte oder Funktionen erforderlich. Wir bemühen
-                    uns, nur solche Inhalte zu verwenden, deren jeweilige Anbieter die IP-Adresse lediglich zur
-                    Auslieferung der Inhalte verwenden. Drittanbieter können ferner sogenannte Pixel-Tags (unsichtbare
-                    Grafiken, auch als "Web Beacons" bezeichnet) für statistische oder Marketingzwecke verwenden. Durch
-                    die "Pixel-Tags" können Informationen, wie der Besucherverkehr auf den Seiten dieser Webseite,
-                    ausgewertet werden. Die pseudonymen Informationen können ferner in Cookies auf dem Gerät der Nutzer
-                    gespeichert werden und unter anderem technische Informationen zum Browser und zum Betriebssystem, zu
-                    verweisenden Webseiten, zur Besuchszeit sowie weitere Angaben zur Nutzung unseres Onlineangebotes
-                    enthalten als auch mit solchen Informationen aus anderen Quellen verbunden werden.</p>
-                <ul class="m-elements">
-                    <li><strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z. B. besuchte Webseiten, Interesse an
-                        Inhalten, Zugriffszeiten); Meta-, Kommunikations- und Verfahrensdaten (z. .B. IP-Adressen,
-                        Zeitangaben, Identifikationsnummern, Einwilligungsstatus).</li>
-                    <li><strong>Betroffene Personen:</strong> Nutzer (z. .B. Webseitenbesucher, Nutzer von
-                        Onlinediensten).</li>
-                    <li><strong>Zwecke der Verarbeitung:</strong> Bereitstellung unseres Onlineangebotes und
-                        Nutzerfreundlichkeit.</li>
-                    <li class=""><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f)
-                        DSGVO).</li>
-                </ul>
-                <p><strong>Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:</strong></p>
-                <ul class="m-elements">
-                    <li><strong>Google Fonts (Bezug vom Google Server): </strong>Bezug von Schriften (und Symbolen) zum
-                        Zwecke einer technisch sicheren, wartungsfreien und effizienten Nutzung von Schriften und
-                        Symbolen im Hinblick auf Aktualität und Ladezeiten, deren einheitliche Darstellung und
-                        Berücksichtigung möglicher lizenzrechtlicher Beschränkungen. Dem Anbieter der Schriftarten wird
-                        die IP-Adresse des Nutzers mitgeteilt, damit die Schriftarten im Browser des Nutzers zur
-                        Verfügung gestellt werden können. Darüber hinaus werden technische Daten (Spracheinstellungen,
-                        Bildschirmauflösung, Betriebssystem, verwendete Hardware) übermittelt, die für die
-                        Bereitstellung der Schriften in Abhängigkeit von den verwendeten Geräten und der technischen
-                        Umgebung notwendig sind. Diese Daten können auf einem Server des Anbieters der Schriftarten in
-                        den USA verarbeitet werden - Beim Besuch unseres Onlineangebotes senden die Browser der Nutzer
-                        ihre Browser HTTP-Anfragen an die Google Fonts Web API (d. h. eine Softwareschnittstelle für den
-                        Abruf der Schriftarten). Die Google Fonts Web API stellt den Nutzern die Cascading Style Sheets
-                        (CSS) von Google Fonts und danach die in der CCS angegebenen Schriftarten zur Verfügung. Zu
-                        diesen HTTP-Anfragen gehören (1) die vom jeweiligen Nutzer für den Zugriff auf das Internet
-                        verwendete IP-Adresse, (2) die angeforderte URL auf dem Google-Server und (3) die HTTP-Header,
-                        einschließlich des User-Agents, der die Browser- und Betriebssystemversionen der Websitebesucher
-                        beschreibt, sowie die Verweis-URL (d. h. die Webseite, auf der die Google-Schriftart angezeigt
-                        werden soll). IP-Adressen werden weder auf Google-Servern protokolliert noch gespeichert und sie
-                        werden nicht analysiert. Die Google Fonts Web API protokolliert Details der HTTP-Anfragen
-                        (angeforderte URL, User-Agent und Verweis-URL). Der Zugriff auf diese Daten ist eingeschränkt
-                        und streng kontrolliert. Die angeforderte URL identifiziert die Schriftfamilien, für die der
-                        Nutzer Schriftarten laden möchte. Diese Daten werden protokolliert, damit Google bestimmen kann,
-                        wie oft eine bestimmte Schriftfamilie angefordert wird. Bei der Google Fonts Web API muss der
-                        User-Agent die Schriftart anpassen, die für den jeweiligen Browsertyp generiert wird. Der
-                        User-Agent wird in erster Linie zum Debugging protokolliert und verwendet, um aggregierte
-                        Nutzungsstatistiken zu generieren, mit denen die Beliebtheit von Schriftfamilien gemessen wird.
-                        Diese zusammengefassten Nutzungsstatistiken werden auf der Seite „Analysen" von Google Fonts
-                        veröffentlicht. Schließlich wird die Verweis-URL protokolliert, sodass die Daten für die Wartung
-                        der Produktion verwendet und ein aggregierter Bericht zu den Top-Integrationen basierend auf der
-                        Anzahl der Schriftartenanfragen generiert werden kann. Google verwendet laut eigener Auskunft
-                        keine der von Google Fonts erfassten Informationen, um Profile von Endnutzern zu erstellen oder
-                        zielgerichtete Anzeigen zu schalten; <strong>Dienstanbieter:</strong> Google Ireland Limited,
-                        Gordon House, Barrow Street, Dublin 4, Irland; <span class=""><strong>Rechtsgrundlagen:</strong>
-                            Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO); </span><strong>Website:</strong>
-                        <a href="https://fonts.google.com/" target="_blank">https://fonts.google.com/</a>;
-                        <strong>Datenschutzerklärung:</strong> <a href="https://policies.google.com/privacy"
-                            target="_blank">https://policies.google.com/privacy</a>; <strong>Grundlage
-                            Drittlandübermittlung:</strong> <span class=""> EU-US Data Privacy Framework (DPF)</span>.
-                        <strong>Weitere Informationen:</strong> <a
-                            href="https://developers.google.com/fonts/faq/privacy?hl=de"
-                            target="_blank">https://developers.google.com/fonts/faq/privacy?hl=de</a>.</li>
-                </ul>
-                <h2 id="m42">Begriffsdefinitionen</h2>
-                <p>In diesem Abschnitt erhalten Sie eine Übersicht über die in dieser Datenschutzerklärung verwendeten
-                    Begrifflichkeiten. Soweit die Begrifflichkeiten gesetzlich definiert sind, gelten deren gesetzliche
-                    Definitionen. Die nachfolgenden Erläuterungen sollen dagegen vor allem dem Verständnis dienen.</p>
-                <ul class="glossary">
-                    <li><strong>Personenbezogene Daten:</strong> "Personenbezogene Daten" sind alle Informationen, die
-                        sich auf eine identifizierte oder identifizierbare natürliche Person (im Folgenden "betroffene
-                        Person") beziehen; als identifizierbar wird eine natürliche Person angesehen, die direkt oder
-                        indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, zu einer Kennnummer,
-                        zu Standortdaten, zu einer Online-Kennung (z. B. Cookie) oder zu einem oder mehreren besonderen
-                        Merkmalen identifiziert werden kann, die Ausdruck der physischen, physiologischen, genetischen,
-                        psychischen, wirtschaftlichen, kulturellen oder sozialen Identität dieser natürlichen Person
-                        sind. </li>
-                    <li><strong>Profile mit nutzerbezogenen Informationen:</strong> Die Verarbeitung von "Profilen mit
-                        nutzerbezogenen Informationen", bzw. kurz "Profilen" umfasst jede Art der automatisierten
-                        Verarbeitung personenbezogener Daten, die darin besteht, dass diese personenbezogenen Daten
-                        verwendet werden, um bestimmte persönliche Aspekte, die sich auf eine natürliche Person beziehen
-                        (je nach Art der Profilbildung können dazu unterschiedliche Informationen betreffend die
-                        Demographie, Verhalten und Interessen, wie z. B. die Interaktion mit Webseiten und deren
-                        Inhalten, etc.) zu analysieren, zu bewerten oder, um sie vorherzusagen (z. B. die Interessen an
-                        bestimmten Inhalten oder Produkten, das Klickverhalten auf einer Webseite oder den
-                        Aufenthaltsort). Zu Zwecken des Profilings werden häufig Cookies und Web-Beacons eingesetzt.
-                    </li>
-                    <li><strong>Reichweitenmessung:</strong> Die Reichweitenmessung (auch als Web Analytics bezeichnet)
-                        dient der Auswertung der Besucherströme eines Onlineangebotes und kann das Verhalten oder
-                        Interessen der Besucher an bestimmten Informationen, wie z. B. Inhalten von Webseiten, umfassen.
-                        Mit Hilfe der Reichweitenanalyse können Betreiber von Onlineangeboten z. B. erkennen, zu welcher
-                        Zeit Nutzer ihre Webseiten besuchen und für welche Inhalte sie sich interessieren. Dadurch
-                        können sie z. B. die Inhalte der Webseiten besser an die Bedürfnisse ihrer Besucher anpassen. Zu
-                        Zwecken der Reichweitenanalyse werden häufig pseudonyme Cookies und Web-Beacons eingesetzt, um
-                        wiederkehrende Besucher zu erkennen und so genauere Analysen zur Nutzung eines Onlineangebotes
-                        zu erhalten. </li>
-                    <li><strong>Verantwortlicher:</strong> Als "Verantwortlicher" wird die natürliche oder juristische
-                        Person, Behörde, Einrichtung oder andere Stelle, die allein oder gemeinsam mit anderen über die
-                        Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet, bezeichnet. </li>
-                    <li><strong>Verarbeitung:</strong> "Verarbeitung" ist jeder mit oder ohne Hilfe automatisierter
-                        Verfahren ausgeführte Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit
-                        personenbezogenen Daten. Der Begriff reicht weit und umfasst praktisch jeden Umgang mit Daten,
-                        sei es das Erheben, das Auswerten, das Speichern, das Übermitteln oder das Löschen. </li>
-                </ul>
-            </div>
-
-            <button class="btn btn-neutral" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-</main>
-<footer class=" text-sm leading-5 p-4 max-md:py-4 bg-base-100" >
-<div class="grid auto-rows-auto grid-cols-1 md:grid-cols-3  md:gap-4">
-
-<aside class="justify-self-center md:justify-self-start md:self-center order-3  md:order-1">
-  <p>Copyright © 2024 - All rights reserved</p>
-</aside>
-<nav class="place-self-center order-1 md:order-2">
-  <div>
-    <a class="link link-hover" href="./legalNotice.html">Impressum</a>
-    |
-    <a class="link link-hover" href="./privatePolicy.html">Datenschutzerklärung</a>
-    |
-    <a class="link link-hover" data-cc="c-settings">Cookie policy</a>
-  </div>
-</nav>
-<nav class="justify-self-center md:justify-self-end order-2 md:order-3">
-  
-  <div>
-  </div>
-</nav>
-
-</div>
-</footer>
-</div>
+    </main>
+    <footer class=" text-sm leading-5 p-4 max-md:py-4 bg-base-100 ">
+        <div class="max-md:divider max-md:divider-neutral"></div>
+        <div class="grid auto-rows-auto grid-cols-1 ">
+            <aside class="justify-self-center ">
+                <p>Copyright © 2024 Leetspeak Generator - All rights reserved</p>
+            </aside>
+        </div>
+    </footer>
+    <script>
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("scrollToTopBtn").style.display = "block";
+          } else {
+            document.getElementById("scrollToTopBtn").style.display = "none";
+          }
+        }
+        function topFunction() {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        }
+      </script>
 </body>
 
 </html>

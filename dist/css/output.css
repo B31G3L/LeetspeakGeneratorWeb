@@ -2382,6 +2382,10 @@ html {
   --tooltip-text-color: var(--fallback-suc,oklch(var(--suc)/1));
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -2393,6 +2397,14 @@ html {
 
 .bottom-0 {
   bottom: 0px;
+}
+
+.right-2 {
+  right: 0.5rem;
+}
+
+.top-2 {
+  top: 0.5rem;
 }
 
 .order-1 {
@@ -2426,6 +2438,10 @@ html {
   margin-bottom: 1rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -2436,10 +2452,6 @@ html {
 
 .inline {
   display: inline;
-}
-
-.flex {
-  display: flex;
 }
 
 .table {
@@ -2490,10 +2502,6 @@ html {
   max-width: 20rem;
 }
 
-.flex-auto {
-  flex: 1 1 auto;
-}
-
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -2508,10 +2516,6 @@ html {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.flex-col {
-  flex-direction: column;
 }
 
 .gap-4 {
@@ -2570,9 +2574,9 @@ html {
   padding-right: 1rem;
 }
 
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 .py-5 {
@@ -2580,17 +2584,20 @@ html {
   padding-bottom: 1.25rem;
 }
 
+.pt-14 {
+  padding-top: 3.5rem;
+}
+
 .text-center {
   text-align: center;
 }
 
-.font-raleway {
-  font-family: myRailway, sans-serif;
+.text-justify {
+  text-align: justify;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.font-raleway {
+  font-family: myRailway, sans-serif;
 }
 
 .text-5xl {
@@ -2625,11 +2632,11 @@ html {
   src: url('../font/Raleway-ExtraLight.ttf');
 }
 
-#myBtn {
+#scrollToTopBtn {
   display: none;
   position: fixed;
-  bottom: 10px;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
   z-index: 99;
   cursor: pointer;
   padding: 15px;
@@ -2727,38 +2734,6 @@ html {
   .md\:bottom-0 {
     bottom: 0px;
   }
-
-  .md\:order-1 {
-    order: 1;
-  }
-
-  .md\:order-2 {
-    order: 2;
-  }
-
-  .md\:order-3 {
-    order: 3;
-  }
-
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .md\:gap-4 {
-    gap: 1rem;
-  }
-
-  .md\:self-center {
-    align-self: center;
-  }
-
-  .md\:justify-self-start {
-    justify-self: start;
-  }
-
-  .md\:justify-self-end {
-    justify-self: end;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -2772,6 +2747,11 @@ html {
 
   .lg\:order-3 {
     order: 3;
+  }
+
+  .lg\:mx-56 {
+    margin-left: 14rem;
+    margin-right: 14rem;
   }
 
   .lg\:grid-cols-3 {
@@ -2792,11 +2772,6 @@ html {
 
   .lg\:justify-self-end {
     justify-self: end;
-  }
-
-  .lg\:py-14 {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
   }
 
   .lg\:text-2xl {

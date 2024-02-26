@@ -1,10 +1,15 @@
 import './cookieconsent.umd.js'
-
+function clearStorage(item, cookie){
+        console.log(item)
+}
 CookieConsent.run({
     onChange: ({cookie, changedCategories, changedServices}) => {
-      console.log("I will do something")
-      console.log(changedCategories)
+       if(!cookie.categories.includes(changedCategories.at(0))){
+        localStorage.clear()
+       }
     },
+
+    
 
     categories: {
         necessary: {

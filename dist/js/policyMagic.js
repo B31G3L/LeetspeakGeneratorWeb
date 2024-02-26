@@ -1,16 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
     if (darkModeEnabled) {
-      document.getElementById("darkMode").checked = darkModeEnabled
+      document.getElementById("html_Tag").setAttribute("data-theme", "darkTheme")
     }
-
-    document.getElementById("darkMode").addEventListener("change", () => {
-        if (document.getElementById("darkMode").checked) {
-          storage.setItem("darkMode", true)
-        } else {
-          storage.setItem("darkMode", false)
-        }
-      });
   });
 
 

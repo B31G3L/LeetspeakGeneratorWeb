@@ -1,35 +1,35 @@
 var currentTranslator = 0;
 var translationTo = 0;
 var output = ""
-var container= ""
+var container = ""
 
 /* --- init default setup --- */
-window.onload = function () { 
+window.onload = function () {
     addActiveClass("simpleLeetNav", "Simple Translate Table");
     loadContent();
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-    const cookieContent = CookieConsent.getCookie();
-    console.log(cookieContent)
-    const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
-    const reverseTranslation = localStorage.getItem('reverseTranslation') === 'true'
-    if (darkModeEnabled) {
-      document.getElementById("darkMode").checked = darkModeEnabled
-    }
+document.addEventListener('DOMContentLoaded', function () {
 
-    document.getElementById("darkMode").addEventListener("change", () => {
-        if (document.getElementById("darkMode").checked) {
-          storage.setItem("darkMode", true)
-        } else {
-          storage.setItem("darkMode", false)
+    
+    document.getElementById("darkModeCheckBox").addEventListener("change", () => {
+        const isChecked = document.getElementById("darkModeCheckBox").checked
+        var currentTheme = "lightTheme"
+        if (isChecked) {
+            currentTheme = "darkTheme"
         }
-      });
-  });
+        document.getElementById("html_Tag").setAttribute("data-theme", currentTheme)
+        const cookieContent = CookieConsent.getCookie();
+        if (cookieContent.categories.includes("optionalFeatures")) {
+            localStorage.setItem("darkMode", isChecked)
+        }
+    });
+
+});
 
 
 
-  function removeActiveClass(elementId) {
+function removeActiveClass(elementId) {
     const element = document.getElementById(elementId);
     if (element) {
         element.classList.remove("active");
@@ -75,13 +75,13 @@ function loadContent() {
     setSwitchTranslationButton()
 }
 
-function setSwitchTranslationButton(){
+function setSwitchTranslationButton() {
     translateByInputAndOutputSheet
     const button = document.getElementById("switchTranslationButton");
-    if(translationTo === PLAIN2LEET){
+    if (translationTo === PLAIN2LEET) {
         button.classList.remove("btn-neutral");
         button.classList.add("btn-ghost");
-    }else{
+    } else {
         button.classList.remove("btn-ghost");
         button.classList.add("btn-neutral");
     }
@@ -100,10 +100,10 @@ function changePlainTextToLeetText() {
 
 function translateByActiveLeet(input) {
     var output = ""
-    if(translationTo === PLAIN2LEET){
+    if (translationTo === PLAIN2LEET) {
         switch (currentTranslator) {
             case SIMPLE:
-                output = translateByInputAndOutputSheet(input,plaintextAlphabet, simpleLeetAlphabet);
+                output = translateByInputAndOutputSheet(input, plaintextAlphabet, simpleLeetAlphabet);
                 break;
             case EXTENDED:
                 output = translateByInputAndOutputSheet(input, plaintextAlphabet, extendedLeetAlphabet);
@@ -115,7 +115,7 @@ function translateByActiveLeet(input) {
     } else {
         switch (currentTranslator) {
             case SIMPLE:
-                output = translateByInputAndOutputSheet(input,simpleLeetAlphabet, plaintextAlphabet);
+                output = translateByInputAndOutputSheet(input, simpleLeetAlphabet, plaintextAlphabet);
                 break;
             case EXTENDED:
                 output = translateByInputAndOutputSheet(input, extendedLeetAlphabet, plaintextAlphabet);
@@ -125,44 +125,44 @@ function translateByActiveLeet(input) {
                 break;
         }
     }
-    
-    
+
+
     return output
 }
 
-function translate(inputChar, inputSheet, outputSheet){
+function translate(inputChar, inputSheet, outputSheet) {
     const arrayIndex = inputSheet.indexOf(inputChar.toUpperCase());
-            if(arrayIndex === -1){
-                if(container.length>=1){
-                    container = inputChar;
-                } else{
-                    container += inputChar;
-                }
-                output += inputChar;  
-            }else{
-                output += outputSheet[arrayIndex];
-                container= ""
-            }
+    if (arrayIndex === -1) {
+        if (container.length >= 1) {
+            container = inputChar;
+        } else {
+            container += inputChar;
+        }
+        output += inputChar;
+    } else {
+        output += outputSheet[arrayIndex];
+        container = ""
+    }
 }
 
 
 function translateByInputAndOutputSheet(input, inputSheet, outputSheet) {
     output = ""
-    container= ""
+    container = ""
 
-    for (let inputChar of input){
-        if(container.length > 0){
-            container += inputChar; 
+    for (let inputChar of input) {
+        if (container.length > 0) {
+            container += inputChar;
             var arrayIndex = inputSheet.indexOf(container.toUpperCase());
-            if(arrayIndex !== -1){
+            if (arrayIndex !== -1) {
                 var leetspeakLetter = outputSheet[arrayIndex];
                 output = output.substring(0, output.length - 1)
                 output += leetspeakLetter;
                 container = ""
-            }else{
+            } else {
                 translate(inputChar, inputSheet, outputSheet)
             }
-        } else{
+        } else {
             translate(inputChar, inputSheet, outputSheet)
         }
     }
@@ -294,11 +294,12 @@ function saveTable() {
 function switchTranslation() {
     const inputa = document.getElementById("inputText");
     inputa.value = document.getElementById("outputText").value
-    translationTo = (PLAIN2LEET === translationTo) ? LEET2PLAIN : PLAIN2LEET;
-    if(PLAIN2LEET === translationTo){
-        storage.setItem("reverseTranslation", false)
-    }else{
-        storage.setItem("reverseTranslation", true)
+    const isPlain2Leet = PLAIN2LEET === translationTo
+    translationTo = (isPlain2Leet) ? LEET2PLAIN : PLAIN2LEET;
+
+    const cookieContent = CookieConsent.getCookie();
+    if (cookieContent.categories.includes("optionalFeatures")) {
+        localStorage.setItem("reverseTranslation", isPlain2Leet)
     }
     loadContent()
 }
