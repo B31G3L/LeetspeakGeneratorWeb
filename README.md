@@ -28,13 +28,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/B31G3L/LeetspeakGeneratorWebe">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/1024_500.png" alt="Logo" width="400" height="200">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Leetspeak-Generator</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Generate your own leet
     <br />
     <a href="https://github.com/B31G3L/LeetspeakGeneratorWeb"><strong>Explore the docs »</strong></a>
     <br />
